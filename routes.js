@@ -3,9 +3,10 @@ var mongoose = require('mongoose');
 var Contact = require('./app/models/contact');
 var express = require("express");
 var app = express();
-var Seeder = require('./tests/seed');
+var Seeder = require('./db/seed');
 //dernier argument pour eviter un warning pour les versions >= 4.0 de mongo
-mongoose.connect('mongodb://localhost:27017/contacts', {useNewUrlParser: true});
+var url = process.env.MONGOLAB_URI;
+mongoose.connect(url, {useNewUrlParser: true});
 Seeder.seed();
 //Creation de contact
 //Route postman par défaut: 
@@ -15,7 +16,7 @@ router.post('/create/contact', function(req, res) {
 	contact.name = req.body.name;
 	contact.lastName = req.body.lastName;
 	contact.mail = req.body.mail;
-	contact.tel = req.body.tel;
+	contact.tel = req.body.tel;	
 	contact.fonction = req.body.fonction;
 	contact.validate(function(e) {
 		if (e) {
