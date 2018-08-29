@@ -4,13 +4,14 @@ var Contact = require('./app/models/contact');
 var express = require("express");
 var app = express();
 var Seeder = require('./db/seed');
+require('dotenv').config();
+
 //dernier argument pour eviter un warning pour les versions >= 4.0 de mongo
-var url = 'mongodb://admin:1000raprelinar@ds237072.mlab.com:37072/contacts';
+var url = process.env.MONGOLAB_URI;
 mongoose.connect(url, {useNewUrlParser: true});
 Seeder.seed();
+
 //Creation de contact
-//Route postman par défaut: 
-//localhost:8080/api/create/contact
 router.post('/create/contact', function(req, res) {
 	var contact = new Contact();		
 	contact.name = req.body.name;
@@ -30,8 +31,6 @@ router.post('/create/contact', function(req, res) {
 	});
 });
 
-//Liste des contacts et sort
-//localhost:8080/api/contacts
 router.post('/contacts', function(req, res) {
 	var param; //query dynamique (name/lastName)
 	if (req.body.param) {
