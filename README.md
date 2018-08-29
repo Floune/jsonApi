@@ -13,7 +13,7 @@ Simply clone, `npm install` && `node server.js`
 online test : 
 https://simplonchallenge.herokuapp.com/
 
-# Routes available
+## Routes available
 - /api/contacts (POST request with sort params such as `param: mail` and `order: desc`
 - /api/view (POST request with search params such as `name: foo` and `lastName: bar`
 - /api/edit/id (POST request with id in url param and edited informations such as `tel: 0555555555`
