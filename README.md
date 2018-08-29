@@ -8,9 +8,7 @@ nodejs version: 8.10.0
 
 mongo version: 4.0.2
 
- https://simplonchallenge.herokuapp.com/
-
 Simply clone, `npm install` && `node server.js`
 
-API testable with postman at  
+online test : 
 https://simplonchallenge.herokuapp.com/
