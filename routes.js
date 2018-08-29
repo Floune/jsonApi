@@ -3,11 +3,13 @@ var mongoose = require('mongoose');
 var Contact = require('./app/models/contact');
 var express = require("express");
 var app = express();
-
+var Seeder = require('./tests/seed');
 //dernier argument pour eviter un warning pour les versions >= 4.0 de mongo
 mongoose.connect('mongodb://localhost:27017/contacts', {useNewUrlParser: true});
-
+Seeder.seed();
 //Creation de contact
+//Route postman par défaut: 
+//localhost:8080/api/create/contact
 router.post('/create/contact', function(req, res) {
 	var contact = new Contact();		
 	contact.name = req.body.name;
@@ -28,6 +30,7 @@ router.post('/create/contact', function(req, res) {
 });
 
 //Liste des contacts et sort
+//localhost:8080/api/contacts
 router.post('/contacts', function(req, res) {
 	var param; //query dynamique (name/lastName)
 	if (req.body.param) {
@@ -39,6 +42,7 @@ router.post('/contacts', function(req, res) {
 	if (req.body.param != "name" && req.body.param != "lastName" && req.body.param != "mail" && req.body.param != "tel" && req.body.param != "fonction") {
 		param = 'name'; //valeur par défaut
 	}
+
 	Contact.find({}).sort(param).exec(function(e, contacts) {
 		if (e) {
 			res.send({status: "error", msg: "contact non trouvé", data: e});
@@ -85,13 +89,12 @@ router.post('/view', function(req, res) {
 
 //Edition de contact
 router.post('/edit/:contact_id', function(req, res) {
-	var query = Contact.findByIdAndUpdate(req.params.contact_id, {$set:req.body});
-	query.exec(function(e) {
+	Contact.findOneAndUpdate({_id: req.params.contact_id}, {$set:req.body}, function(e, contact) {
 		if (e) {
 			res.json({status: "error", msg: "contact non trouvé", data: e});
 		}
 		else {
-			res.json({status: "success", msg: "Contact mis à jour"})
+			res.json({status: "success", msg: "Contact mis à jour", data: contact})
 		}
 	});
 });
