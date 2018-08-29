@@ -4,7 +4,6 @@ var Contact = require('./app/models/contact');
 var express = require("express");
 var app = express();
 var Seeder = require('./db/seed');
-require('dotenv').config();
 
 //dernier argument pour eviter un warning pour les versions >= 4.0 de mongo
 var url = process.env.MONGOLAB_URI;
