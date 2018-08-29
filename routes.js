@@ -5,7 +5,7 @@ var express = require("express");
 var app = express();
 var Seeder = require('./db/seed');
 //dernier argument pour eviter un warning pour les versions >= 4.0 de mongo
-var url = process.env.MONGOLAB_URI;
+var url = 'mongodb://admin:1000raprelinar@ds237072.mlab.com:37072/contacts';
 mongoose.connect(url, {useNewUrlParser: true});
 Seeder.seed();
 //Creation de contact
