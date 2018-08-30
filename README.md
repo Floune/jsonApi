@@ -19,3 +19,5 @@ https://simplonchallenge.herokuapp.com/
 - /api/edit/id POST request with id in url param and edited informations such as `tel: 0555555555`
 - /api/create/contact POST request with all required fields for a new contact: name, lastName, tel, mail, fonction
 - /api/delete/id DELETE request with id in url
+
+These routes are also in the postman collection
