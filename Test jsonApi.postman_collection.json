@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "da789518-33ea-4801-a49f-6fcd1242bd60",
+		"name": "Test jsonApi",
+		"description": "Test routes for quick api startup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://simplonchallenge.herokuapp.com/api/contacts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lastName",
+							"value": "Johnson",
+							"sessionValue": "name",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "tel",
+							"value": "0556",
+							"sessionValue": "desc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Miroslav",
+							"sessionValue": "andrelepaté",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "mail",
+							"value": "djyfujd",
+							"sessionValue": "djyfujd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "fonction",
+							"value": "assistant",
+							"sessionValue": "assistant",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://simplonchallenge.herokuapp.com/api/contacts",
+					"protocol": "https",
+					"host": [
+						"simplonchallenge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://simplonchallenge.herokuapp.com/api/create/contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Miroslav",
+							"sessionValue": "Miroslav",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Johnson",
+							"sessionValue": "Johnson",
+							"type": "text"
+						},
+						{
+							"key": "tel",
+							"value": "0556555555",
+							"sessionValue": "0556555555",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "mjohnson@gmail.com",
+							"sessionValue": "mjohnson@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "fonction",
+							"value": "backend dev",
+							"sessionValue": "backend dev",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://simplonchallenge.herokuapp.com/api/create/contact",
+					"protocol": "https",
+					"host": [
+						"simplonchallenge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"create",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://simplonchallenge.herokuapp.com/api/contacts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "param",
+							"value": "mail",
+							"sessionValue": "name",
+							"type": "text"
+						},
+						{
+							"key": "order",
+							"value": "desc",
+							"sessionValue": "desc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://simplonchallenge.herokuapp.com/api/contacts",
+					"protocol": "https",
+					"host": [
+						"simplonchallenge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"contacts"
+					]
+				},
+				"description": "contacts list with sort params : mail, desc"
+			},
+			"response": []
+		},
+		{
+			"name": "https://simplonchallenge.herokuapp.com/api/view",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Bryan",
+							"sessionValue": "Smith",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://simplonchallenge.herokuapp.com/api/view",
+					"protocol": "https",
+					"host": [
+						"simplonchallenge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"view"
+					]
+				},
+				"description": "Contact view with search query name: Bryan"
+			},
+			"response": []
+		},
+		{
+			"name": "https://simplonchallenge.herokuapp.com/api/view",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lastName",
+							"value": "Smith",
+							"sessionValue": "Smith",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://simplonchallenge.herokuapp.com/api/view",
+					"protocol": "https",
+					"host": [
+						"simplonchallenge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"view"
+					]
+				},
+				"description": "Contact view with search query lastName: Smith"
+			},
+			"response": []
+		},
+		{
+			"name": "https://simplonchallenge.herokuapp.com/api/edit/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "mail",
+							"value": "leaddev@sdsd.fr",
+							"sessionValue": "Miro",
+							"type": "text"
+						},
+						{
+							"key": "fonction",
+							"value": "lead dev",
+							"sessionValue": "lead dev",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://simplonchallenge.herokuapp.com/api/edit/",
+					"protocol": "https",
+					"host": [
+						"simplonchallenge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"edit",
+						""
+					]
+				},
+				"description": "edit route with params, complete url with id to edit"
+			},
+			"response": []
+		},
+		{
+			"name": "https://simplonchallenge.herokuapp.com/api/delete/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://simplonchallenge.herokuapp.com/api/delete/",
+					"protocol": "https",
+					"host": [
+						"simplonchallenge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"delete",
+						""
+					]
+				},
+				"description": "Add id to delete in url"
+			},
+			"response": []
+		}
+	]
+}
